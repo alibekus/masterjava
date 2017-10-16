@@ -1,10 +1,16 @@
 package ru.javaops.masterjava.service;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
+=======
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+>>>>>>> Prepare to Matrix implementation
 
 public class MailService {
     private static final String OK = "OK";
@@ -13,6 +19,7 @@ public class MailService {
     private static final String INTERRUPTED_BY_TIMEOUT = "+++ Interrupted by timeout";
     private static final String INTERRUPTED_EXCEPTION = "+++ InterruptedException";
 
+<<<<<<< HEAD
     private final ExecutorService mailExecutor = Executors.newFixedThreadPool(8);
 
     public GroupResult sendToList(final String template, final Set<String> emails) throws Exception {
@@ -82,6 +89,13 @@ public class MailService {
         }.call();
     }
 
+=======
+    public GroupResult sendToList(final String template, final Set<String> emails) throws Exception {
+        return new GroupResult(0, Collections.emptyList(), null);
+    }
+
+
+>>>>>>> Prepare to Matrix implementation
     // dummy realization
     public MailResult sendToUser(String template, String email) throws Exception {
         try {
