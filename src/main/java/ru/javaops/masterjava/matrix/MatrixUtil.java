@@ -1,6 +1,7 @@
 package ru.javaops.masterjava.matrix;
 
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;
@@ -21,6 +22,27 @@ public class MatrixUtil {
 
     // TODO implement parallel multiplication matrixA*matrixB
     public static int[][] concurrentMultiply(int[][] matrixA, int[][] matrixB, ExecutorService executor) throws InterruptedException, ExecutionException {
+        /*System.out.println("Matrix A" + Arrays.deepToString(matrixA));
+        System.out.println("Matrix B" + Arrays.deepToString(matrixB));
+
+        for (int j = 0; j < MATRIX_SIZE; j++) {
+            if (j == 0 || (j > 0 && j % MATRIX_PART == 0)) {
+                int finalJ = j;
+                executor.submit(new Runnable() {
+                    @Override
+                    public void run() {
+                        int[][] partMatrixA = copyPartMatrix(finalJ, MATRIX_SIZE, matrixA);
+                        int[][] partMatrixB = copyPartMatrix(MATRIX_SIZE, finalJ, matrixB);
+                        System.out.println(finalJ);
+                        multiplyPartMatrices(partMatrixA, partMatrixB, matrixC, finalJ, finalJ);
+                        System.out.println("Concurrent matrix at run: " + Arrays.deepToString(matrixC));
+                    }
+                });
+            }
+        }
+        executor.shutdown();
+        return matrixC;*/
+
         final int matrixSize = matrixA.length;
         final int[][] matrixC = new int[matrixSize][matrixSize];
 
@@ -89,6 +111,29 @@ public class MatrixUtil {
         return matrixC;
     }
 
+    /*private static void multiplyPartMatrices(int[][] matrixA, int[][] matrixB, int[][] matrixC, int startRow, int startCol) {
+        final int aColsLength = matrixA[0].length;
+        final int aRowsLength = matrixA.length;
+        final int bColsLength = matrixB[0].length;
+        final int bRowsLength = matrixB.length;
+
+        int thatColumn[] = new int[bRowsLength];
+
+        for (int j = 0, jj = startCol; j < bColsLength; j++, jj++) {
+            for (int k = 0; k < bColsLength; k++) {
+                thatColumn[k] = matrixB[k][j];
+            }
+            for (int i = 0, ii = startRow; i < bRowsLength; i++, ii++) {
+                int thisRow[] = matrixA[i];
+                int summ = 0;
+                for (int k = 0; k < aColsLength; k++) {
+                    summ += thisRow[k] * thatColumn[k];
+                }
+                matrixC[ii][jj] = summ;
+            }
+        }
+    }*/
+
     public static int[][] create(int size) {
         int[][] matrix = new int[size][size];
         Random rn = new Random();
@@ -112,4 +157,28 @@ public class MatrixUtil {
         return true;
     }
 
+    /*private static int[][] copyPartMatrix(int rowNum, int colNum, int[][] sourceMatrix) {
+        int maxColNum, maxRowNum, minRowNum, minColNum;
+        int[][] partMatrix;
+        if (rowNum == sourceMatrix.length) {
+            maxRowNum = MATRIX_SIZE;
+            minRowNum = 0;
+            maxColNum = colNum + MATRIX_PART;
+            minColNum = colNum;
+            partMatrix = new int[maxRowNum][MATRIX_PART];
+        } else {
+            maxRowNum = rowNum + MATRIX_PART;
+            minRowNum = rowNum;
+            maxColNum = MATRIX_SIZE;
+            minColNum = 0;
+            partMatrix = new int[MATRIX_PART][maxColNum];
+        }
+        for (int i = minRowNum, ii = 0; i < maxRowNum; i++, ii++) {
+            for (int j = minColNum, jj = 0; j < maxColNum; j++, jj++) {
+                partMatrix[ii][jj] = sourceMatrix[i][j];
+            }
+        }
+        System.out.println("part matrix: " + Arrays.deepToString(partMatrix));
+        return partMatrix;
+    }*/
 }

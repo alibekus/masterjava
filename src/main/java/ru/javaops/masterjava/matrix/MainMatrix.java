@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
  */
 public class MainMatrix {
     static final int MATRIX_SIZE = 1000;
-    static final int THREAD_NUMBER = 4;
+    static final int THREAD_NUMBER = 10;
 
     private static final ExecutorService executor = Executors.newFixedThreadPool(MainMatrix.THREAD_NUMBER);
 
@@ -29,12 +29,14 @@ public class MainMatrix {
             System.out.println("Pass " + count);
             long start = System.currentTimeMillis();
             final int[][] matrixC = MatrixUtil.singleThreadMultiply(matrixA, matrixB);
+//            System.out.println("Single matrix: " + Arrays.deepToString(matrixC));
             double duration = (System.currentTimeMillis() - start) / 1000.;
             out("Single thread time, sec: %.3f", duration);
             singleThreadSum += duration;
 
             start = System.currentTimeMillis();
             final int[][] concurrentMatrixC = MatrixUtil.concurrentMultiply(matrixA, matrixB, executor);
+//            System.out.println("Concurrent matrix: " + Arrays.deepToString(concurrentMatrixC));
             duration = (System.currentTimeMillis() - start) / 1000.;
             out("Concurrent thread time, sec: %.3f", duration);
             concurrentThreadSum += duration;
@@ -44,6 +46,7 @@ public class MainMatrix {
             }
             count++;
         }
+        executor.shutdown();
         out("\nAverage single thread time, sec: %.3f", singleThreadSum / 5.);
         out("Average concurrent thread time, sec: %.3f", concurrentThreadSum / 5.);
     }
