@@ -2,22 +2,140 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://javaops.ru payload.xsd">
     <Users>
-        <User flag="active" city="kiv">
-            <email>gmail@gmail.com</email>
-            <fullName>Full Name</fullName>
+        <User flag="active" city="kiv" email="gmail@gmail.com">
+            <fullName>Active TopJava02 Kiev User01</fullName>
+            <group>topjava02</group>
         </User>
-        <User flag="superuser" city="spb">
-            <email>admin@javaops.ru</email>
-            <fullName>Admin</fullName>
+        <User flag="superuser" city="spb" email="admin@javaops.ru">
+            <fullName>Admin MasterJava01 Sankt-Petersburg User01</fullName>
+            <group>masterjava01</group>
+            <group>topjava07</group>
+            <group>topjava08</group>
+            <group>masterjava01</group>
         </User>
-        <User flag="deleted" city="spb">
-            <email>mail@yandex.ru</email>
-            <fullName>Deleted</fullName>
+        <User flag="deleted" city="spb" email="mail@yandex.ru">
+            <fullName>Deleted BasJava01 Sankt-Petersburg User02</fullName>
+            <group>basejava01</group>
+        </User>
+        <User flag="active" city="ast" email="activeuser01@mail.ru">
+            <fullName>Active MasterJava02 Astana User01</fullName>
+            <group>masterjava02</group>
+        </User>
+        <User flag="active" city="ast">
+            <fullName>Active TopJava03 Astana User02</fullName>
+            <group>topjava03</group>
+        </User>
+        <User flag="active" city="ast">
+            <fullName>Active TopJava02 Astana User03</fullName>
+            <group>topjava02</group>
+        </User>
+        <User flag="active" city="alm">
+            <fullName>Active TopJava02 Almaty User01</fullName>
+            <group>topjava02</group>
+        </User>
+        <User flag="active" city="alm">
+            <fullName>Active TopJava03 Almaty User02</fullName>
+            <group>topjava03</group>
+        </User>
+        <User flag="active" city="alm">
+            <fullName>Admin Almaty User03</fullName>
+            <group>masterjava01</group>
+            <group>topjava01</group>
+            <group>basejava01</group>
+        </User>
+        <User flag="superuser" city="ast">
+            <fullName>Admin MasterJava01 Astana User04</fullName>
+            <group>masterjava01</group>
+        </User>
+        <User flag="active" city="ast">
+            <fullName>Active MasterJava02 Astana User05</fullName>
+            <group>masterjava02</group>
+        </User>
+        <User flag="active" city="spb">
+            <fullName>Active MasterJava02 Spb User03</fullName>
+            <group>masterjava02</group>
+            <group>topjava02</group>
+            <group>basejava02</group>
+        </User>
+        <User flag="deleted" city="ast">
+            <fullName>Deleted Astana User06</fullName>
+            <group>basejava01</group>
+            <group>topjava01</group>
+            <group>masterjava01</group>
+        </User>
+        <User flag="deleted" city="ast">
+            <fullName>Deleted Almaty User03</fullName>
+            <group>basejava01</group>
+            <group>topjava01</group>
+            <group>masterjava01</group>
         </User>
     </Users>
     <Cities>
         <City id="spb">Санкт-Петербург</City>
         <City id="kiv">Киев</City>
         <City id="mnsk">Минск</City>
+        <City id="ast">Астана</City>
+        <City id="alm">Алматы</City>
     </Cities>
+    <Projects>
+        <Project id="basejava">
+            <Name>
+                BaseJava
+            </Name>
+            <Description>
+                For begginers
+            </Description>
+        </Project>
+        <Project id="topjava">
+            <Name>
+                TopJava
+            </Name>
+            <Description>
+                For middle level developers
+            </Description>
+        </Project>
+        <Project id="masterjava">
+            <Name>
+                MasterJava
+            </Name>
+            <Description>
+                For upper level developers
+            </Description>
+        </Project>
+    </Projects>
+    <Groups>
+        <Group Type="REGISTERING" Project="basejava" id="basejava03">
+            <Name>BaseJava03</Name>
+        </Group>
+        <Group Type="CURRENT" Project="basejava" id="basejava02">
+            <Name>BaseJava02</Name>
+        </Group>
+        <Group Type="FINISHED" Project="basejava" id="basejava01">
+            <Name>BaseJava01</Name>
+        </Group>
+        <Group id="topjava07" Type="CURRENT" Project="topjava">
+            <Name>TopJava07</Name>
+        </Group>
+        <Group id="topjava08" Type="REGISTERING" Project="topjava">
+            <Name>TopJava08</Name>
+        </Group>
+        <Group Type="REGISTERING" Project="topjava" id="topjava03">
+            <Name>TopJava03</Name>
+        </Group>
+        <Group Type="CURRENT" Project="topjava" id="topjava02">
+            <Name>TopJava02</Name>
+        </Group>
+        <Group Type="FINISHED" Project="topjava" id="topjava01">
+            <Name>TopJava01</Name>
+        </Group>
+        <Group Type="REGISTERING" Project="masterjava" id="masterjava03">
+            <Name>MasterJava03</Name>
+        </Group>
+        <Group Type="CURRENT" Project="masterjava" id="masterjava02">
+            <Name>MasterJava02</Name>
+        </Group>
+        <Group Type="FINISHED" Project="masterjava" id="masterjava01">
+            <Name>MasterJava01</Name>
+        </Group>
+    </Groups>
 </Payload>
