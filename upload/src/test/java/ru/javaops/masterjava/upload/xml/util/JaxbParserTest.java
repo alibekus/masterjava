@@ -2,9 +2,9 @@ package ru.javaops.masterjava.upload.xml.util;
 
 import com.google.common.io.Resources;
 import org.junit.Test;
-import ru.javaops.masterjava.xml.schema.CityType;
-import ru.javaops.masterjava.xml.schema.ObjectFactory;
-import ru.javaops.masterjava.xml.schema.Payload;
+import ru.javaops.masterjava.upload.xml.schema.CityType;
+import ru.javaops.masterjava.upload.xml.schema.ObjectFactory;
+import ru.javaops.masterjava.upload.xml.schema.Payload;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
