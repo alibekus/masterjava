@@ -1,17 +1,18 @@
 package ru.javaops.masterjava.upload.xml;
 
 import com.google.common.base.Splitter;
+import com.google.common.base.Strings;
 import com.google.common.io.Resources;
 import j2html.tags.ContainerTag;
 import one.util.streamex.StreamEx;
-import ru.javaops.masterjava.xml.schema.ObjectFactory;
-import ru.javaops.masterjava.xml.schema.Payload;
-import ru.javaops.masterjava.xml.schema.Project;
-import ru.javaops.masterjava.xml.schema.User;
-import ru.javaops.masterjava.xml.util.JaxbParser;
-import ru.javaops.masterjava.xml.util.Schemas;
-import ru.javaops.masterjava.xml.util.StaxStreamProcessor;
-import ru.javaops.masterjava.xml.util.XsltProcessor;
+import ru.javaops.masterjava.upload.xml.schema.ObjectFactory;
+import ru.javaops.masterjava.upload.xml.schema.Payload;
+import ru.javaops.masterjava.upload.xml.schema.Project;
+import ru.javaops.masterjava.upload.xml.schema.User;
+import ru.javaops.masterjava.upload.xml.util.JaxbParser;
+import ru.javaops.masterjava.upload.xml.util.Schemas;
+import ru.javaops.masterjava.upload.xml.util.StaxStreamProcessor;
+import ru.javaops.masterjava.upload.xml.util.XsltProcessor;
 
 import javax.xml.stream.events.XMLEvent;
 import java.io.InputStream;
