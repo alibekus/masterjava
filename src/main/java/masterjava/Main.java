@@ -1,4 +1,4 @@
-package ru.javaops.masterjava;
+package masterjava;
 
 /**
  * User: gkislin
