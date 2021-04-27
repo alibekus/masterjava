@@ -22,7 +22,7 @@ public class DBIProvider {
         static {
             final DBI dbi;
             if (connectionFactory != null) {
-                log.info("Init jDBI with  connectionFactory");
+                log.info("Init jDBI with connectionFactory");
                 dbi = new DBI(connectionFactory);
             } else {
                 try {

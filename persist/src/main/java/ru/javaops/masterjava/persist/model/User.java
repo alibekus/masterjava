@@ -4,6 +4,7 @@ import com.bertoncelj.jdbi.entitymapper.Column;
 
 import java.util.Objects;
 
+
 public class User extends BaseEntity {
     @Column("full_name")
     private String fullName;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user email="alex@graydy.com" city="New-York" flag="active" groupRefs="current">
+    Alex Graydy
+</user>
+<user email="pitt@smapras.com" city="Pasadena" flag="superuser" groupRefs="current">
+    Pitt Sampras
+</user>
+<user email="matt@daimond.com" city="Miami" flag="deleted" groupRefs="finished">
+    Matt Daimond
+</user>
+<user email="user2@mail.com" city="Moscow" flag="active" groupRefs="registering">
+    User Two
+</user>
