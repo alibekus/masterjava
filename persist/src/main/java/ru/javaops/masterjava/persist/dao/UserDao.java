@@ -27,7 +27,7 @@ public abstract class UserDao implements AbstractDao {
         return user;
     }
 
-    @SqlBatch("INSERT INTO users (full_name, email, flag) VALUES (:fullName, :email, CAST(:flag AS user_flag_type)) ")
+    @SqlBatch("INSERT INTO users (full_name, email, flag) VALUES (:fullName, :email, CAST(:flag AS user_flag)) ")
     @GetGeneratedKeys
 //    @BatchChunkSize(chunkSize)
     abstract int insertGeneratedId(@BindBean User user);
