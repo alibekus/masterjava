@@ -4,12 +4,19 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+@Slf4j
 public class MailServiceExecutor {
-    private static final String OK = "OK";
 
     private static final String INTERRUPTED_BY_FAULTS_NUMBER = "+++ Interrupted by faults number";
     private static final String INTERRUPTED_BY_TIMEOUT = "+++ Interrupted by timeout";
     private static final String INTERRUPTED_EXCEPTION = "+++ InterruptedException";
+    private static final ExecutorService mailExecutor = Executors.newFixedThreadPool(8);
+
+    public static GroupResult sendBulk(final Set<Addressee> addressees, final String subject, final String body) {
+        final CompletionService<MailResult> completionService = new ExecutorCompletionService<>(mailExecutor);
+        List<Future<MailResult>> futures = StreamEx.of(addressees)
+                .map(addressee -> completionService.submit(() -> MailSender.sendTo(addressee, subject, body)))
+                .toList();
 
     public GroupResult sendToList(final String template, final Set<String> emails) throws Exception {
         return new GroupResult(0, Collections.emptyList(), null);
