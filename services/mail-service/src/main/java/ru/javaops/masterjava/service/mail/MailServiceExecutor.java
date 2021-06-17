@@ -7,7 +7,6 @@ import ru.javaops.masterjava.web.WebStateException;
 import ru.javaops.masterjava.web.WsClient;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.*;
@@ -17,7 +16,6 @@ public class MailServiceExecutor {
 
     private static final String INTERRUPTED_BY_FAULTS_NUMBER = "+++ Interrupted by faults number";
     private static final String INTERRUPTED_BY_TIMEOUT = "+++ Interrupted by timeout";
-    private static final String INTERRUPTED_EXCEPTION = "+++ InterruptedException";
     private static final ExecutorService mailExecutor = Executors.newFixedThreadPool(8);
 
     public static GroupResult sendBulk(final Set<Addressee> addressees, final String subject, final String body) throws WebStateException {
